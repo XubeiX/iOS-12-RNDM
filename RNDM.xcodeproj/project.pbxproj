@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3CE9EA0D2587D1DE68F76EA6 /* Pods_RNDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656A7B7A9942AF9211A22BC2 /* Pods_RNDM.framework */; };
+		7E0E4DB8224F804700816C34 /* ThoughtCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E4DB7224F804700816C34 /* ThoughtCategory.swift */; };
+		7E0E4DBB224F81CD00816C34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E4DBA224F81CD00816C34 /* Constants.swift */; };
 		7E61AE98224F6FA70048A42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61AE97224F6FA70048A42D /* AppDelegate.swift */; };
 		7E61AE9A224F6FA70048A42D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61AE99224F6FA70048A42D /* MainVC.swift */; };
 		7E61AE9D224F6FA70048A42D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E61AE9B224F6FA70048A42D /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		4A2161237C1B635198D80D03 /* Pods-RNDM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNDM/Pods-RNDM.release.xcconfig"; sourceTree = "<group>"; };
 		656A7B7A9942AF9211A22BC2 /* Pods_RNDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E0E4DB7224F804700816C34 /* ThoughtCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCategory.swift; sourceTree = "<group>"; };
+		7E0E4DBA224F81CD00816C34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7E61AE94224F6FA60048A42D /* RNDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E61AE97224F6FA70048A42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E61AE99224F6FA70048A42D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -61,6 +65,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7E0E4DB6224F803600816C34 /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				7E0E4DB7224F804700816C34 /* ThoughtCategory.swift */,
+			);
+			path = enum;
+			sourceTree = "<group>";
+		};
+		7E0E4DB9224F81B900816C34 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7E0E4DBA224F81CD00816C34 /* Constants.swift */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
 		7E61AE8B224F6FA60048A42D = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +102,8 @@
 		7E61AE96224F6FA60048A42D /* RNDM */ = {
 			isa = PBXGroup;
 			children = (
+				7E0E4DB9224F81B900816C34 /* utilities */,
+				7E0E4DB6224F803600816C34 /* enum */,
 				7E61AEAF224F768F0048A42D /* Model */,
 				7E61AEAE224F76860048A42D /* View */,
 				7E61AEAB224F73B00048A42D /* Controller */,
@@ -195,12 +217,22 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RNDM/Pods-RNDM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0E4DBB224F81CD00816C34 /* Constants.swift in Sources */,
 				7E61AEAD224F76710048A42D /* AddThoughtVC.swift in Sources */,
+				7E0E4DB8224F804700816C34 /* ThoughtCategory.swift in Sources */,
 				7E61AE9A224F6FA70048A42D /* MainVC.swift in Sources */,
 				7E61AE98224F6FA70048A42D /* AppDelegate.swift in Sources */,
 			);
