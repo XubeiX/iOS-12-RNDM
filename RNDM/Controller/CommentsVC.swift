@@ -23,6 +23,7 @@ class CommentsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        keyboardView.bindToKeyboard()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 80
@@ -82,6 +83,7 @@ class CommentsVC: UIViewController {
                 debugPrint("Transaction failed: \(error)")
             } else {
                 self.commentTxt.text = ""
+                self.commentTxt.resignFirstResponder()
             }
         }
     }
