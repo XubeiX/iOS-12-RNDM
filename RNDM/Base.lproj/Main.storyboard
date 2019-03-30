@@ -284,6 +284,13 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="optionsImage" translatesAutoresizingMaskIntoConstraints="NO" id="1dl-Bq-Mi0">
+                                                    <rect key="frame" x="364" y="6.5" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="PUi-iw-WJe"/>
+                                                        <constraint firstAttribute="height" constant="30" id="ovS-IF-XP4"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sGD-az-pj7" firstAttribute="top" secondItem="aET-cC-LwS" secondAttribute="bottom" constant="8" id="0IY-Dw-kdJ"/>
@@ -294,14 +301,17 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="sGD-az-pj7" secondAttribute="trailing" id="XW4-Cb-PQr"/>
                                                 <constraint firstItem="TfY-4c-Smr" firstAttribute="bottom" secondItem="fNq-7N-Jlp" secondAttribute="bottomMargin" id="ZtI-BO-fSc"/>
                                                 <constraint firstItem="aET-cC-LwS" firstAttribute="leading" secondItem="fNq-7N-Jlp" secondAttribute="leadingMargin" id="di3-bn-UzU"/>
+                                                <constraint firstItem="1dl-Bq-Mi0" firstAttribute="centerY" secondItem="bf0-A6-3Wh" secondAttribute="centerY" id="lxt-8H-j1X"/>
                                                 <constraint firstItem="bf0-A6-3Wh" firstAttribute="centerY" secondItem="aET-cC-LwS" secondAttribute="centerY" id="oEb-dA-vfw"/>
                                                 <constraint firstItem="bf0-A6-3Wh" firstAttribute="leading" secondItem="aET-cC-LwS" secondAttribute="trailing" constant="8" id="pjR-eY-PdI"/>
+                                                <constraint firstItem="1dl-Bq-Mi0" firstAttribute="trailing" secondItem="fNq-7N-Jlp" secondAttribute="trailingMargin" id="wuR-gh-WF3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentsNumLbl" destination="bf4-5I-P2K" id="Tl8-Gp-SVv"/>
                                             <outlet property="likesImg" destination="uOa-ex-ITI" id="Hxw-HB-IQ8"/>
                                             <outlet property="likesNumLbl" destination="Ggt-zO-oA1" id="kSX-6c-1Y2"/>
+                                            <outlet property="optionsMenu" destination="1dl-Bq-Mi0" id="LRs-ng-1bj"/>
                                             <outlet property="thoughtTxtLbl" destination="sGD-az-pj7" id="Xye-86-tWA"/>
                                             <outlet property="timestampLbl" destination="bf0-A6-3Wh" id="rwH-Pr-MzW"/>
                                             <outlet property="usernameLbl" destination="aET-cC-LwS" id="oRu-xP-e4d"/>
@@ -462,11 +472,20 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="optionsImage" translatesAutoresizingMaskIntoConstraints="NO" id="eyh-ee-8ds">
+                                                    <rect key="frame" x="364" y="14.5" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="P7o-gH-aBq"/>
+                                                        <constraint firstAttribute="height" constant="30" id="hmG-2q-UR6"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="eyh-ee-8ds" firstAttribute="centerY" secondItem="Ce7-3o-G7q" secondAttribute="centerY" id="1tB-Tg-KcZ"/>
                                                 <constraint firstItem="XUG-IZ-TdV" firstAttribute="trailing" secondItem="KMC-CB-xWX" secondAttribute="trailingMargin" id="6uU-SX-4mr"/>
                                                 <constraint firstItem="XUG-IZ-TdV" firstAttribute="top" secondItem="CyM-8R-Dax" secondAttribute="bottom" constant="8" id="7Wu-W4-DI6"/>
                                                 <constraint firstItem="CyM-8R-Dax" firstAttribute="top" secondItem="KMC-CB-xWX" secondAttribute="topMargin" constant="8" id="ANe-ac-zyM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eyh-ee-8ds" secondAttribute="trailing" id="Doz-by-4l4"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="XUG-IZ-TdV" secondAttribute="bottom" constant="4" id="G4Y-FL-Xgl"/>
                                                 <constraint firstItem="Ce7-3o-G7q" firstAttribute="centerY" secondItem="CyM-8R-Dax" secondAttribute="centerY" id="aUX-P7-Gny"/>
                                                 <constraint firstItem="XUG-IZ-TdV" firstAttribute="leading" secondItem="KMC-CB-xWX" secondAttribute="leadingMargin" id="cRU-X0-RBp"/>
@@ -476,6 +495,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentTxt" destination="XUG-IZ-TdV" id="3Ay-6B-r1r"/>
+                                            <outlet property="optionsMenu" destination="eyh-ee-8ds" id="ayv-IL-tbb"/>
                                             <outlet property="timestamp" destination="Ce7-3o-G7q" id="ftj-1Q-krg"/>
                                             <outlet property="usernameTxt" destination="CyM-8R-Dax" id="Sd4-2n-fK3"/>
                                         </connections>
@@ -559,6 +579,7 @@
     <resources>
         <image name="addThoughtIcon" width="21" height="24"/>
         <image name="commentIcon" width="26" height="22"/>
+        <image name="optionsImage" width="30" height="30"/>
         <image name="starIconFilled" width="20" height="19"/>
     </resources>
 </document>

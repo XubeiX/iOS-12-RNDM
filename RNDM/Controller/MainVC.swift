@@ -110,7 +110,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "thoughtCell", for: indexPath) as? ThoughtCell {
-            cell.configureCell(for: thoughts[indexPath.row])
+            cell.configureCell(for: thoughts[indexPath.row], delegate: self)
             return cell
         } else {
             return UITableViewCell()
@@ -129,5 +129,11 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
+    }
+}
+
+extension MainVC: ThoughtDelegate {
+    func optionsTapped(thought: Thought) {
+        print("test")
     }
 }
