@@ -11,11 +11,12 @@ import Firebase
 
 class ThoughtCell: UITableViewCell {
 
-    @IBOutlet weak var usernameLbl: UILabel!
-    @IBOutlet weak var timestampLbl: UILabel!
-    @IBOutlet weak var thoughtTxtLbl: UILabel!
-    @IBOutlet weak var likesNumLbl: UILabel!
-    @IBOutlet weak var likesImg: UIImageView!
+    @IBOutlet private weak var usernameLbl: UILabel!
+    @IBOutlet private weak var timestampLbl: UILabel!
+    @IBOutlet private weak var thoughtTxtLbl: UILabel!
+    @IBOutlet private weak var likesNumLbl: UILabel!
+    @IBOutlet private weak var likesImg: UIImageView!
+    @IBOutlet private weak var commentsNumLbl: UILabel!
     
     private var thought: Thought!
     
@@ -35,11 +36,10 @@ class ThoughtCell: UITableViewCell {
         usernameLbl.text = thought.username
         thoughtTxtLbl.text = thought.thoughtTxt
         likesNumLbl.text = String(thought.numLikes)
+        commentsNumLbl.text = String(thought.numComments)
         
-        let formater = DateFormatter()
-        formater.dateFormat = "d MMM, hh:mm"
-        let timestampe = formater.string(from: thought.timestamp)
-        timestampLbl.text = timestampe
+       
+        timestampLbl.text = thought.timestamp.toReadableFormat()
     }
 
 }

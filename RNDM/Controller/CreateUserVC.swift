@@ -11,11 +11,11 @@ import Firebase
 
 class CreateUserVC: UIViewController {
 
-    @IBOutlet weak var emailTxt: UITextField!
-    @IBOutlet weak var passwordTxt: UITextField!
-    @IBOutlet weak var usernameTxt: UITextField!
-    @IBOutlet weak var createBtn: UIButton!
-    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet private weak var emailTxt: UITextField!
+    @IBOutlet private weak var passwordTxt: UITextField!
+    @IBOutlet private weak var usernameTxt: UITextField!
+    @IBOutlet private weak var createBtn: UIButton!
+    @IBOutlet private weak var cancelBtn: UIButton!
     
     
     

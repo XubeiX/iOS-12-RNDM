@@ -11,10 +11,10 @@ import Firebase
 
 class LoginVC: UIViewController {
 
-    @IBOutlet weak var createUserBtn: UIButton!
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var emailTxt: UITextField!
-    @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet private weak var createUserBtn: UIButton!
+    @IBOutlet private weak var loginBtn: UIButton!
+    @IBOutlet private weak var emailTxt: UITextField!
+    @IBOutlet private weak var passwordTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         loginBtn.layer.cornerRadius = 10
