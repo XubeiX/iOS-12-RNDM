@@ -31,6 +31,7 @@
                                 </segments>
                                 <color key="tintColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <action selector="categoryChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="BCb-9h-RHF"/>
                                     <action selector="categoryWasChanged:" destination="Fvc-KJ-cQR" eventType="valueChanged" id="A3q-WD-6Lz"/>
                                 </connections>
                             </segmentedControl>
@@ -38,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="152" width="414" height="744"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="100" id="auC-Ch-Opm" customClass="ThoughtCell" customModule="thoughtCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="thoughtCell" rowHeight="100" id="auC-Ch-Opm" customClass="ThoughtCell" customModule="RNDM" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="auC-Ch-Opm" id="fNq-7N-Jlp">
@@ -66,7 +67,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TfY-4c-Smr">
                                                     <rect key="frame" x="20" y="65" width="49" height="24"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starIconFilled" translatesAutoresizingMaskIntoConstraints="NO" id="uOa-ex-ITI">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starIconFilled" highlightedImage="starIconFilled" translatesAutoresizingMaskIntoConstraints="NO" id="uOa-ex-ITI">
                                                             <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="e2a-6j-W5O"/>
@@ -96,7 +97,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="likesImg" destination="uOa-ex-ITI" id="Bl4-Bz-bjB"/>
+                                            <outlet property="likesImg" destination="uOa-ex-ITI" id="Hxw-HB-IQ8"/>
                                             <outlet property="likesNumLbl" destination="Ggt-zO-oA1" id="kSX-6c-1Y2"/>
                                             <outlet property="thoughtTxtLbl" destination="sGD-az-pj7" id="Xye-86-tWA"/>
                                             <outlet property="timestampLbl" destination="bf0-A6-3Wh" id="rwH-Pr-MzW"/>
