@@ -1,24 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PUS-VE-MBe">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--RNDM-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="RNDM" id="77E-QQ-bgb">
+                        <barButtonItem key="rightBarButtonItem" image="addThoughtIcon" id="GnN-Uf-rcf">
+                            <connections>
+                                <segue destination="Fvc-KJ-cQR" kind="show" id="DeL-Bs-k2j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1142" y="779"/>
+        </scene>
+        <!--Add ThoughtVC-->
+        <scene sceneID="5jp-QY-nef">
+            <objects>
+                <viewController id="Fvc-KJ-cQR" customClass="AddThoughtVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S5Q-W5-MCR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TMB-3f-DOj">
+                                <rect key="frame" x="20" y="104" width="374" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="DwA-kt-MOm"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Funny"/>
+                                    <segment title="Serious"/>
+                                    <segment title="Crazy"/>
+                                </segments>
+                                <color key="tintColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="categoryWasChanged:" destination="Fvc-KJ-cQR" eventType="valueChanged" id="DTx-rg-bcA"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VXl-MZ-OIk">
+                                <rect key="frame" x="20" y="152" width="374" height="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="15W-nE-L2g">
+                                <rect key="frame" x="20" y="181" width="374" height="100"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="bpD-ve-mNM"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Foa-zb-2tK">
+                                <rect key="frame" x="167" y="293" width="80" height="35"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="2vj-8g-Tv6"/>
+                                    <constraint firstAttribute="height" constant="35" id="bcw-e7-5nl"/>
+                                </constraints>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="postBtnWasPressed:" destination="Fvc-KJ-cQR" eventType="touchUpInside" id="C61-AG-vC7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Foa-zb-2tK" firstAttribute="top" secondItem="15W-nE-L2g" secondAttribute="bottom" constant="12" id="0lm-hc-ll5"/>
+                            <constraint firstItem="g1g-z2-CvN" firstAttribute="trailing" secondItem="VXl-MZ-OIk" secondAttribute="trailing" constant="20" id="AKq-gC-Fxi"/>
+                            <constraint firstItem="15W-nE-L2g" firstAttribute="top" secondItem="VXl-MZ-OIk" secondAttribute="bottom" constant="12" id="FjL-Hx-isJ"/>
+                            <constraint firstItem="g1g-z2-CvN" firstAttribute="trailing" secondItem="15W-nE-L2g" secondAttribute="trailing" constant="20" id="Jhc-ki-XMy"/>
+                            <constraint firstItem="g1g-z2-CvN" firstAttribute="trailing" secondItem="TMB-3f-DOj" secondAttribute="trailing" constant="20" id="PNX-bc-gmb"/>
+                            <constraint firstItem="TMB-3f-DOj" firstAttribute="leading" secondItem="g1g-z2-CvN" secondAttribute="leading" constant="20" id="RiY-TE-PNe"/>
+                            <constraint firstItem="15W-nE-L2g" firstAttribute="leading" secondItem="g1g-z2-CvN" secondAttribute="leading" constant="20" id="Rmx-l5-omc"/>
+                            <constraint firstItem="VXl-MZ-OIk" firstAttribute="top" secondItem="TMB-3f-DOj" secondAttribute="bottom" constant="16" id="TM0-KW-Pnm"/>
+                            <constraint firstItem="VXl-MZ-OIk" firstAttribute="leading" secondItem="g1g-z2-CvN" secondAttribute="leading" constant="20" id="X27-eE-ChK"/>
+                            <constraint firstItem="Foa-zb-2tK" firstAttribute="centerX" secondItem="S5Q-W5-MCR" secondAttribute="centerX" id="mnc-VK-KXS"/>
+                            <constraint firstItem="TMB-3f-DOj" firstAttribute="top" secondItem="g1g-z2-CvN" secondAttribute="top" constant="16" id="n6M-Vx-dSV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g1g-z2-CvN"/>
+                    </view>
+                    <connections>
+                        <outlet property="categorySegment" destination="TMB-3f-DOj" id="rdB-KZ-Lks"/>
+                        <outlet property="postBtn" destination="Foa-zb-2tK" id="UOx-Np-YiV"/>
+                        <outlet property="thoughtTxt" destination="15W-nE-L2g" id="okP-0v-SZZ"/>
+                        <outlet property="usernameTxt" destination="VXl-MZ-OIk" id="H5D-Rg-X4H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JGh-ti-KBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1815.9420289855075" y="776.78571428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gb1-Ua-Wij">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PUS-VE-MBe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d2T-3X-1AA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ULg-CY-6DI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q1d-KD-E6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482.60869565217394" y="778.79464285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addThoughtIcon" width="21" height="24"/>
+    </resources>
 </document>
