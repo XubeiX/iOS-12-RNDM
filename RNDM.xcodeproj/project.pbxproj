@@ -12,6 +12,8 @@
 		7E0E4DBB224F81CD00816C34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E4DBA224F81CD00816C34 /* Constants.swift */; };
 		7E0E4DBD224F872000816C34 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E4DBC224F872000816C34 /* Thought.swift */; };
 		7E0E4DBF224F886A00816C34 /* ThoughtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E4DBE224F886A00816C34 /* ThoughtCell.swift */; };
+		7E3A6574224FAEC80041E2A6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6573224FAEC80041E2A6 /* LoginVC.swift */; };
+		7E3A6576224FB0CE0041E2A6 /* CreateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6575224FB0CE0041E2A6 /* CreateUserVC.swift */; };
 		7E61AE98224F6FA70048A42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61AE97224F6FA70048A42D /* AppDelegate.swift */; };
 		7E61AE9A224F6FA70048A42D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61AE99224F6FA70048A42D /* MainVC.swift */; };
 		7E61AE9D224F6FA70048A42D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E61AE9B224F6FA70048A42D /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 		7E0E4DBA224F81CD00816C34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7E0E4DBC224F872000816C34 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 		7E0E4DBE224F886A00816C34 /* ThoughtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCell.swift; sourceTree = "<group>"; };
+		7E3A6573224FAEC80041E2A6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		7E3A6575224FB0CE0041E2A6 /* CreateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserVC.swift; sourceTree = "<group>"; };
 		7E61AE94224F6FA60048A42D /* RNDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E61AE97224F6FA70048A42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E61AE99224F6FA70048A42D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			children = (
 				7E61AE99224F6FA70048A42D /* MainVC.swift */,
 				7E61AEAC224F76710048A42D /* AddThoughtVC.swift */,
+				7E3A6573224FAEC80041E2A6 /* LoginVC.swift */,
+				7E3A6575224FB0CE0041E2A6 /* CreateUserVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RNDM/Pods-RNDM-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -234,6 +241,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -273,9 +281,11 @@
 			files = (
 				7E0E4DBB224F81CD00816C34 /* Constants.swift in Sources */,
 				7E61AEAD224F76710048A42D /* AddThoughtVC.swift in Sources */,
+				7E3A6574224FAEC80041E2A6 /* LoginVC.swift in Sources */,
 				7E0E4DB8224F804700816C34 /* ThoughtCategory.swift in Sources */,
 				7E0E4DBD224F872000816C34 /* Thought.swift in Sources */,
 				7E61AE9A224F6FA70048A42D /* MainVC.swift in Sources */,
+				7E3A6576224FB0CE0041E2A6 /* CreateUserVC.swift in Sources */,
 				7E0E4DBF224F886A00816C34 /* ThoughtCell.swift in Sources */,
 				7E61AE98224F6FA70048A42D /* AppDelegate.swift in Sources */,
 			);

@@ -16,8 +16,10 @@ class MainVC: UIViewController {
     
     private var thoughts = [Thought]()
     private var thoughtsCollectionRef: CollectionReference!
-    private var thoughtsListener: ListenerRegistration!
+    private var thoughtsListener: ListenerRegistration?
     private var selectedCategory = ThoughtCategory.funny.rawValue
+    
+    private var handler: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +31,20 @@ class MainVC: UIViewController {
         thoughtsCollectionRef = Firestore.firestore().collection(THOUGHTS_REF)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        setListener()
+    override func viewWillAppear(_ animated: Bool) {
+        handler = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if user == nil {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
+                self.present(loginVC, animated: true, completion: nil)
+            } else {
+                self.setListener()
+            }
+        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        thoughtsListener.remove()
+        thoughtsListener?.remove()
     }
     
     func setListener() {
@@ -78,8 +88,18 @@ class MainVC: UIViewController {
             selectedCategory = ThoughtCategory.popular.rawValue
         }
         
-        thoughtsListener.remove()
+        thoughtsListener?.remove()
         setListener()
+    }
+    
+    
+    @IBAction func logoutBtnWasPressed(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signoutError as NSError {
+            debugPrint("Error signout: \(signoutError)")
+        }
     }
 }
 

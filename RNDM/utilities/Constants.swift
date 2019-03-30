@@ -15,3 +15,6 @@ let NUM_LIKES = "numLikes"
 let THOUGHT_TXT = "thoughtTxt"
 let TIMESTAMP = "timestamp"
 let USERNAME = "username"
+
+let USERS_REF = "users"
+let DATE_CREATED = "dateCreated"
