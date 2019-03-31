@@ -135,7 +135,8 @@ extension CommentsVC: CommentDelegate {
             }
         }
         let editAction = UIAlertAction(title: "Edit", style: .default) { (action) in
-            
+            self.performSegue(withIdentifier: "toEditComment", sender: (comment, self.thought))
+            alert.dismiss(animated: true, completion: nil)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
@@ -145,5 +146,11 @@ extension CommentsVC: CommentDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? UpdateCommentVC {
+            if let commentData = sender as? (comment: Comment, thought: Thought) {
+                destination.commentData = commentData
+            }
+        }
+    }
 }

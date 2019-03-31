@@ -134,6 +134,55 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
 extension MainVC: ThoughtDelegate {
     func optionsTapped(thought: Thought) {
-        print("test")
+        let alert = UIAlertController(title: "Delete", message: "Do you want to delete your thought?", preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+            
+            self.delete(collection: Firestore.firestore().collection(THOUGHTS_REF).document(thought.documentId).collection(COMMENTS_REF), completion: { (error) in
+                if let error = error {
+                    debugPrint(error.localizedDescription)
+                } else {
+                    Firestore.firestore().collection(THOUGHTS_REF).document(thought.documentId).delete(completion: { (error) in
+                        if let error = error {
+                            debugPrint(error.localizedDescription)
+                        } else {
+                            alert.dismiss(animated: true, completion: nil)
+                        }
+                    })
+                }
+            })
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func delete(collection: CollectionReference, bathSize: Int = 100, completion: @escaping (Error?) -> ()){
+        collection.limit(to: bathSize).getDocuments { (docset, error) in
+            guard let docset = docset  else {
+                completion(error)
+                return
+            }
+            
+            let batch = collection.firestore.batch()
+            docset.documents.forEach{
+                batch.deleteDocument($0.reference)
+            }
+            
+            batch.commit { (batchError) in
+                if let batchError = batchError {
+                    completion(batchError)
+                } else {
+                    if docset.documents.count == 0 {
+                        completion(nil)
+                        return
+                    }
+                    self.delete(collection: collection, bathSize: bathSize, completion: completion)
+                }
+            }
+            
+        }
     }
 }

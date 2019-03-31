@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CE9EA0D2587D1DE68F76EA6 /* Pods_RNDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656A7B7A9942AF9211A22BC2 /* Pods_RNDM.framework */; };
+		7E0DE2CB2250B37400101BA0 /* UpdateCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DE2CA2250B37400101BA0 /* UpdateCommentVC.swift */; };
 		7E0E4DB8224F804700816C34 /* ThoughtCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E4DB7224F804700816C34 /* ThoughtCategory.swift */; };
 		7E0E4DBB224F81CD00816C34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E4DBA224F81CD00816C34 /* Constants.swift */; };
 		7E0E4DBD224F872000816C34 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E4DBC224F872000816C34 /* Thought.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		4A2161237C1B635198D80D03 /* Pods-RNDM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNDM/Pods-RNDM.release.xcconfig"; sourceTree = "<group>"; };
 		656A7B7A9942AF9211A22BC2 /* Pods_RNDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E0DE2CA2250B37400101BA0 /* UpdateCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommentVC.swift; sourceTree = "<group>"; };
 		7E0E4DB7224F804700816C34 /* ThoughtCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCategory.swift; sourceTree = "<group>"; };
 		7E0E4DBA224F81CD00816C34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7E0E4DBC224F872000816C34 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				7E3A6573224FAEC80041E2A6 /* LoginVC.swift */,
 				7E3A6575224FB0CE0041E2A6 /* CreateUserVC.swift */,
 				7E3A6577224FBBFD0041E2A6 /* CommentsVC.swift */,
+				7E0DE2CA2250B37400101BA0 /* UpdateCommentVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E0E4DBB224F81CD00816C34 /* Constants.swift in Sources */,
+				7E0DE2CB2250B37400101BA0 /* UpdateCommentVC.swift in Sources */,
 				7E61AEAD224F76710048A42D /* AddThoughtVC.swift in Sources */,
 				7E3A6574224FAEC80041E2A6 /* LoginVC.swift in Sources */,
 				7E3A657A224FC0E20041E2A6 /* CommentCell.swift in Sources */,
