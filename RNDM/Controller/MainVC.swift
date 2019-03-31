@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
+import FBSDKLoginKit
 
 class MainVC: UIViewController {
 
@@ -20,6 +22,8 @@ class MainVC: UIViewController {
     private var selectedCategory = ThoughtCategory.funny.rawValue
     
     private var handler: AuthStateDidChangeListenerHandle?
+    
+    private let loginManager = FBSDKLoginManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,9 +100,27 @@ class MainVC: UIViewController {
     @IBAction func logoutBtnWasPressed(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
+            logoutSocial()
             try firebaseAuth.signOut()
         } catch let signoutError as NSError {
             debugPrint("Error signout: \(signoutError)")
+        }
+    }
+    
+    func logoutSocial(){
+        guard let user = Auth.auth().currentUser else { return }
+        for info in user.providerData {
+            switch info.providerID {
+            case GoogleAuthProviderID:
+                GIDSignIn.sharedInstance()?.signOut()
+            case TwitterAuthProviderID:
+                break
+            case FacebookAuthProviderID:
+                loginManager.logOut()
+                break
+            default:
+                break
+            }
         }
     }
 }
